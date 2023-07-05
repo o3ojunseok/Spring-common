@@ -1,8 +1,14 @@
 package com.junseok.practice.user;
 
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 
 @Entity
+@Getter
+@NoArgsConstructor
 public class User {
 
     @Id
@@ -15,4 +21,9 @@ public class User {
     @Column(nullable = false)
     private String password;
 
+    @Builder
+    public User(String email, String password) {
+        this.email = email;
+        this.password = password;
+    }
 }
