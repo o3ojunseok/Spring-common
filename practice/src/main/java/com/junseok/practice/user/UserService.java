@@ -14,4 +14,12 @@ public class UserService {
     public List<User> findAll() {
         return userRepository.findAll();
     }
+
+    public User signUpUser(UserRequestDto userRequestDto) {
+        User user = User.builder()
+                .email(userRequestDto.getEmail())
+                .password((userRequestDto.getPassword()))
+                .build();
+        return userRepository.save(user);
+    }
 }
