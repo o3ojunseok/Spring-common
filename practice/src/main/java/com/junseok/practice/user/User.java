@@ -3,11 +3,9 @@ package com.junseok.practice.user;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
-import java.util.Date;
-
+// builder vs 생성자
 @Entity
 @Getter
 @NoArgsConstructor
