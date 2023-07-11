@@ -32,10 +32,7 @@ public class UserService {
         Optional<User> optionalUser = userRepository.findById(id);
         if (optionalUser.isPresent()) {
             User user = optionalUser.get();
-            user = user.builder()
-                    .email(userRequestDto.getEmail())
-                    .password(userRequestDto.getPassword())
-                    .build();
+            user.update(userRequestDto);
             User updatedUser = userRepository.save(user);
             return new UserResponseDto(updatedUser);
         } else {

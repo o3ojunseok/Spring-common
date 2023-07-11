@@ -26,4 +26,9 @@ public class User {
         this.email = email;
         this.password = password;
     }
+
+    public void update(UserRequestDto userRequestDto) {
+        this.email = userRequestDto.getEmail();
+        this.password = userRequestDto.getPassword();
+    }
 }
