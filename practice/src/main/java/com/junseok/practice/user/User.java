@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Date;
+
 // builder vs 생성자
 @Entity
 @Getter
@@ -21,6 +23,12 @@ public class User {
     @Column(nullable = false)
     private String password;
 
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date created_at;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date updated_at;
+    
     @Builder
     public User(String email, String password) {
         this.email = email;
